@@ -35,4 +35,59 @@
   to {
     transform: rotate(360deg);
   }
+}/* App.css */
+
+/* App.css */
+
+/* Navbar.css */
+
+
+
+
+
+/* Navbar.css */
+
+.custom-navbar {
+  background-color: #ffffff; /* Add your desired navbar background color */
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  margin-right: 8px;
+}
+
+.navbar-nav .nav-link {
+  color: #000000; /* Navbar link color */
+}
+
+.book-button {
+  background-color: #6f42c1;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.book-button:hover {
+  background-color: #5a3497;
+  color: #ffffff;
+}
+
+.offcanvas-body {
+  padding: 20px;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+}
+
+.navbar-toggler .close-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #000;
+}
+
+
