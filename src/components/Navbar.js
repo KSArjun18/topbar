@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -13,13 +15,13 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg custom-navbar">
                 <a className="navbar-brand brand" href="#home">
                     <img
-                        src="path-to-your-logo.png"
+                        src="phttps://booking.webestica.com/assets/images/logo.svg"
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
                         alt="Booking"
                     />
-                    Booking
+                  
                 </a>
                 <button
                     className="navbar-toggler"
@@ -86,7 +88,12 @@ const Navbar = () => {
                     <form>
                         <div className="mb-3">
                             <label htmlFor="roomType" className="form-label">Room & Suite Type</label>
-                            <input type="text" className="form-control" id="roomType" />
+                            <select className="form-select" id="roomType">
+                                <option>Select location</option>
+                                <option value="1">One Bedroom Ocean Suit</option>
+                                <option value="2">The Penthouse Suite</option>
+                                <option value="3">The Entertainment Suite</option>
+                            </select>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="checkIn" className="form-label">Check in</label>
@@ -98,7 +105,7 @@ const Navbar = () => {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="guests" className="form-label">Guests & rooms</label>
-                            <input type="number" className="form-control" id="guests" defaultValue="2" />
+                            <input type="text" className="form-control" id="guests" defaultValue="2 Guests 1 Room" />
                         </div>
                     </form>
                     <button className="btn btn-primary mt-3">Check Availability</button>

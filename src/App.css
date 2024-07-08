@@ -47,47 +47,129 @@
 
 /* Navbar.css */
 
-.custom-navbar {
-  background-color: #ffffff; /* Add your desired navbar background color */
-}
 
-.brand {
-  display: flex;
-  align-items: center;
-}
 
-.brand img {
-  margin-right: 8px;
-}
+/* //cards slider */
 
-.navbar-nav .nav-link {
-  color: #000000; /* Navbar link color */
-}
-
-.book-button {
-  background-color: #6f42c1;
-  color: #ffffff;
-  margin-left: 10px;
-}
-
-.book-button:hover {
-  background-color: #5a3497;
-  color: #ffffff;
-}
-
-.offcanvas-body {
-  padding: 20px;
-}
-
-.btn-close {
-  background: none;
+.card {
   border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  /* position: relative; */
 }
 
-.navbar-toggler .close-icon {
+.card-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000;
+  border-radius: 50%;
+}
+.carousel-control-prev, .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5%;
+  height: 5%;
+  opacity: 0.5;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+/* Room */
+.card-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.card-title, .card-text {
+  margin-bottom: 0.5rem;
+}
+
+
+/* navbar */
+.offcanvas-body {
+  overflow-y: auto;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #6c63ff;
+  border-color: #6c63ff;
+}
+
+.btn-primary:hover {
+  background-color: #5753c9;
+  border-color: #5753c9;
+}
+
+.offcanvas-title {
   font-size: 1.5rem;
-  line-height: 1;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+
+
+.custom-navbar {
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #000;
 }
 
+.navbar-toggler {
+  border: none;
+  font-size: 1.5rem;
+}
 
+.close-icon {
+  font-size: 2rem;
+}
+
+.book-button {
+  background-color: #6c63ff;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.book-button:hover {
+  background-color: #5753c9;
+}
+
+.offcanvas-body ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.offcanvas-body ul li {
+  margin-bottom: 0.5rem;
+}
