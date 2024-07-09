@@ -173,3 +173,47 @@ ul {
 .offcanvas-body ul li {
   margin-bottom: 0.5rem;
 }
+
+
+/* Rooms */
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%;
+}
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.custom-carousel .carousel-item {
+    position: relative;
+    height: 100vh;
+}
+
+
+
+/* Happy mOments */
+.img-fluid {
+  object-fit: cover;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.star-rating {
+  color: #ffcc00;
+}
+
+.star-rating .checked {
+  color: #ffcc00;
+}
+
+
