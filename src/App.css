@@ -199,21 +199,9 @@ ul {
 
 
 
-/* Happy mOments */
-.img-fluid {
-  object-fit: cover;
-}
 
-.card {
-  background: rgba(255, 255, 255, 0.9);
-}
 
-.star-rating {
-  color: #ffcc00;
-}
 
-.star-rating .checked {
-  color: #ffcc00;
-}
+
 
 

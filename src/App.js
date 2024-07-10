@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 
-import CarSlider from './components/cardSlider';
+import CarSlider from './components/Experience_cards';
 import Rooms from './components/CarouselComponent';
 import RoomCarousel from './components/CarouselComponent';
 import ImageCardCarousel from './components/ImageCardCarousel';
@@ -10,11 +10,11 @@ import ImageCardCarousel from './components/ImageCardCarousel';
 function App() {
   return (
     <div>
-  {/* <Navbar/>
-  <CarSlider/> */}
+  {/* <Navbar/> */}
+  <CarSlider/>
   {/* <Rooms/> */}
   {/* <RoomCarousel/> */}
-  <ImageCardCarousel/>
+  {/* <ImageCardCarousel/> */}
     </div>
   
   );
