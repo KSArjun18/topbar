@@ -1,70 +1,144 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+import { PopularData } from './Carddata';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart,faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Footer = () => {
-  return (
-    <footer className="bg-light text-center text-lg-start d-none d-lg-block">
-      <div className="container p-4">
-        <div className="row">
-          <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
-            <h5 className="text-uppercase">
-              <img src="https://zameensquare.com/_next/static/media/zameen-logo.be926326.png" alt="Zameen Square" />
-            </h5>
-            <p>
-              Reach our team at <strong>+91 6363099125</strong> or mail us to <a href="mailto:contact@zameensquare.com">contact@zameensquare.com</a> for all enquiries
-            </p>
-            <form className="d-flex">
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Enter your email address"
-                aria-label="Email"
-                aria-describedby="button-addon2"
-              />
-              <button
-                className="btn btn-success"
-                type="button"
-                id="button-addon2"
-              >
-                Subscribe
-              </button>
-            </form>
+
+const Popular = () => {
+  const [filter, setFilter] = useState('All');
+
+  const [likedItems, setLikedItems] = useState(PopularData.map(item => ({ ...item, liked: false })));
+
+
+
+  const handleLike = (id) => {
+    const newLikedItems = likedItems.map(item =>
+      item.id === id ? { ...item, liked: !item.liked } : item
+    );
+    setLikedItems(newLikedItems);
+
+    // Update the data as needed, for example, send a request to the server.
+    console.log(newLikedItems.find(item => item.id === id));
+  };
+
+  const filteredData = likedItems.filter(item => {
+    if (filter === 'All') return true;
+    if (filter === '2 BHK' && item.title.includes('2BHK')) return true;
+    if (filter === '3 BHK' && item.title.includes('3BHK')) return true;
+    return false;
+  });
+
+  const items = filteredData.map((item) => (
+    <div className='m-3'>
+<div className='item ' data-value={item.id} key={item.id}>
+      <div className='card object-fit-fill border rounded-4 h-50'>
+        <img src={item.image} className='card-img-top rounded-4' alt={item.title} />
+        
+        <div className='card-body'>
+          <div className='d-flex'>
+          <button 
+          className='btn  ' 
+          style={{ color: item.liked ? 'red' : '#c2d8ff', position: 'absolute', right: '10px' }} 
+          onClick={() => handleLike(item.id)}
+        >
+          <FontAwesomeIcon icon={faHeart} size="xl" />
+        </button>
+          <p className='card-title text-primary fw-bold fs-5 mt-1'>{item.price}</p>
+          
           </div>
-          <div className="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 className="text-uppercase">Quick Links</h5>
-            <ul className="list-unstyled mb-0">
-              <li><a href="#!" className="text-dark">About Us</a></li>
-              <li><a href="#!" className="text-dark">Contact Us</a></li>
-              <li><a href="#!" className="text-dark">Privacy Policy</a></li>
-              <li><a href="#!" className="text-dark">Refund Policy</a></li>
-              <li><a href="#!" className="text-dark">Terms & Conditions</a></li>
-            </ul>
-          </div>
-          <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 className="text-uppercase">Top Localities</h5>
-            <div className="d-flex flex-wrap">
-              <a href="#!" className="text-dark me-3">Properties in New Delhi</a>
-              <a href="#!" className="text-dark me-3">Property in Mumbai</a>
-              <a href="#!" className="text-dark me-3">Property in Chennai</a>
-              <a href="#!" className="text-dark me-3">Property in Bengaluru</a>
-              <a href="#!" className="text-dark me-3">Property in Ahmedabad</a>
-              <a href="#!" className="text-dark me-3">Property in Hyderabad</a>
-              <a href="#!" className="text-dark">Property in Gurgaon</a>
+        <div>
+        <h6 className='card-title font fs-0'>{item.title}</h6>
+        <p className='fw-lighter'>{item.location}</p>
+        </div>
+         
+        <div className='row fw-lighter'>
+            <div className='col-12 d-flex mb-2'>
+              <p className='me-3'>{item.sqft}</p>
+              <p className='me-3'>{item.wash}</p>
+              <p className='me-3'>{item.furnished}</p>
+            </div>
+            <div className='col-12'>
+              <p className='mb-2'>Posted On</p>
+            </div>
+            <div className='col-12 d-flex justify-content-between align-items-center'>
+              <p className='fw-normal mb-0'>{item.listed}</p>
+              <button type="button" className="btn btn-primary mb-0 px-2">View Details</button>
             </div>
           </div>
+
         </div>
       </div>
-      <div className="text-center p-3 bg-light">
-        © 2024 All rights reserved.
-        <div className="d-flex justify-content-center mt-2">
-          <a href="#!" className="text-dark me-4"><i className="fab fa-facebook-f"></i></a>
-          <a href="#!" className="text-dark me-4"><i className="fab fa-instagram"></i></a>
-          <a href="#!" className="text-dark me-4"><i className="fab fa-twitter"></i></a>
-          <a href="#!" className="text-dark"><i className="fab fa-linkedin-in"></i></a>
+    </div>
+    </div>
+    
+  ));
+
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3.2 },
+
+  };
+
+  return (
+    <div className='container mt-5'>
+      <div className='row'>
+      <div className='d-flex flex-wrap align-items-center mb-4'>
+          <div className='fs-3 flex-grow-1 d-flex'>
+            <div>
+            <p>Popular Apartment in Mysuru</p>
+            </div>
+            <div className='d-flex d-none d-md-inline ms-3'>
+            <button
+              className='btn btn-success text-dark px-3 py-0 me-2'
+              onClick={() => setFilter('All')}
+            >
+              All
+            </button>
+            <button
+              className='btn btn-success text-dark px-3 py-0 me-2'
+              onClick={() => setFilter('2 BHK')}
+            >
+              2 BHK
+            </button>
+            <button
+              className='btn btn-success text-dark px-3 py-0'
+              onClick={() => setFilter('3 BHK')}
+            >
+              3 BHK
+            </button>
+          </div>
+           
+            
+          </div>
+          
+         
         </div>
+
+        <AliceCarousel
+          mouseTracking={true}
+          // activeIndex={activeIndex}
+          items={items}
+          responsive={responsive}
+          controlsStrategy="alternate"
+          disableDotsControls={true}
+          showSlideInfo={true}
+          renderPrevButton={() => {
+            return <p className="p-4 absolute left-0 top-0"><FontAwesomeIcon icon={faCircleChevronRight} flip="horizontal" size="lg" /></p>
+          }}
+          renderNextButton={() => {
+            return <p className="p-4 absolute right-0 top-0"><FontAwesomeIcon icon={faCircleChevronRight} size="lg" /></p>
+          }}
+         
+        />
       </div>
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default Popular;
+          
