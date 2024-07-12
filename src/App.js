@@ -1,20 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
+import Subscribe from './components/Subscribe';
 
-import CarSlider from './components/Experience_cards';
-import Rooms from './components/CarouselComponent';
-import RoomCarousel from './components/CarouselComponent';
-import ImageCardCarousel from './components/ImageCardCarousel';
+
+
+
 
 function App() {
   return (
     <div>
   {/* <Navbar/> */}
-  <CarSlider/>
+  {/* <CarSlider/> */}
   {/* <Rooms/> */}
   {/* <RoomCarousel/> */}
   {/* <ImageCardCarousel/> */}
+  {/* <Footer/> */}
+ {/* <Popular/> */}
+ {/* <Navbar/> */}
+ <Subscribe/>
     </div>
   
   );
