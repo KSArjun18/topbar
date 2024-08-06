@@ -75,8 +75,8 @@ const Form = () => {
           <div className="row d-flex justify-content-center">
             <div className="w-auto col-lg-6 std_border-dot std_input_item">
               <div className="">
-                <div className="d-flex gap-4">
-                  <div className="input-group mb-3 w-75">
+                <div className="d-flex gap-4 flex-wrap">
+                  <div className="input-group mb-3 w-100">
                     <input
                       type="text"
                       className="form-control rounded-5"
@@ -88,7 +88,7 @@ const Form = () => {
                       <div className="error">{formik.errors.firstName}</div>
                     ) : null}
                   </div>
-                  <div className="input-group mb-3 w-75">
+                  <div className="input-group mb-3 w-100">
                     <input
                       type="text"
                       className="form-control rounded-5"
@@ -101,7 +101,7 @@ const Form = () => {
                     ) : null}
                   </div>
                 </div>
-                <div className="input-group mb-3">
+                <div className="input-group mb-3 w-100">
                   <input
                     type="text"
                     className="form-control rounded-5"
@@ -113,7 +113,7 @@ const Form = () => {
                     <div className="error">{formik.errors.username}</div>
                   ) : null}
                 </div>
-                <div className="input-group mb-3">
+                <div className="input-group mb-3 w-100">
                   <input
                     type="text"
                     className="form-control rounded-5"
@@ -125,7 +125,7 @@ const Form = () => {
                     <div className="error">{formik.errors.email}</div>
                   ) : null}
                 </div>
-                <div className="input-group mb-3">
+                <div className="input-group mb-3 w-100">
                   <input
                     type="password"
                     className="form-control rounded-5"
@@ -142,8 +142,8 @@ const Form = () => {
 
             <div className="w-auto col-lg-6 std_input_item">
               <div className="">
-                <div className="d-flex gap-4">
-                  <div className="input-group mb-3 w-75">
+                <div className="d-flex gap-4 flex-wrap">
+                  <div className="input-group mb-3 w-100">
                     <input
                       type="text"
                       className="form-control rounded-5"
@@ -155,7 +155,7 @@ const Form = () => {
                       <div className="error">{formik.errors.college}</div>
                     ) : null}
                   </div>
-                  <div className="input-group mb-3 w-75">
+                  <div className="input-group mb-3 w-100">
                     <input
                       type="text"
                       className="form-control rounded-5"
@@ -168,7 +168,7 @@ const Form = () => {
                     ) : null}
                   </div>
                 </div>
-                <div className="input-group mb-3">
+                <div className="input-group mb-3 w-100">
                   <input
                     type="text"
                     className="form-control rounded-5"
@@ -180,7 +180,7 @@ const Form = () => {
                     <div className="error">{formik.errors.department}</div>
                   ) : null}
                 </div>
-                <div className="input-group mb-3">
+                <div className="input-group mb-3 w-100">
                   <input
                     type="text"
                     className="form-control rounded-5"
@@ -192,7 +192,7 @@ const Form = () => {
                     <div className="error">{formik.errors.yearOfStudy}</div>
                   ) : null}
                 </div>
-                <div className="input-group mb-3">
+                <div className="input-group mb-3 w-100">
                   <input
                     type="text"
                     className="form-control rounded-5"
@@ -206,7 +206,7 @@ const Form = () => {
                 </div>
               </div>
             </div>
-            <div className='d-flex justify-content-center mt-2 '>
+            <div className='d-flex justify-content-center mt-2'>
               <p className='std_text'><small><small><small>By signing up to lobster, you are agreeing to our Privacy Policy and Terms & Conditions</small></small></small></p>
             </div>
             <div className='d-flex justify-content-center'>
@@ -220,3 +220,37 @@ const Form = () => {
 }
 
 export default Form;
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group .form-control {
+  margin-bottom: 0;
+}
+
+.input-group .error {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .d-flex.gap-4 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .std_input_item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+                    
