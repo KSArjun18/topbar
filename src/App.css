@@ -203,5 +203,29 @@ ul {
 
 
 
+.std_input_item .form-control.is-invalid {
+  border-color: #dc3545; /* Bootstrap's danger color */
+}
+
+.std_error_form {
+  color: #dc3545; /* Bootstrap's danger color */
+  font-size: 0.875rem; /* Smaller font size */
+  margin-top: 0.1rem; /* Minimal margin above the error message */
+  margin-bottom: 0; /* No margin below the error message */
+}
+
+.input-group.mb-2 {
+  margin-bottom: 0; /* Remove bottom margin to keep error message close */
+}
+
+input::placeholder {
+  color: #6c757d; /* Placeholder text color */
+}
+
+input:focus {
+  border-color: #80bdff; /* Focus color */
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
 
 
