@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Subscribe from './components/Subscribe';
+import Calendar from './components/Calendar';
 
 
 
@@ -18,7 +19,8 @@ function App() {
   {/* <Footer/> */}
  {/* <Popular/> */}
  {/* <Navbar/> */}
- <Subscribe/>
+ {/* <Subscribe/> */}
+ <Calendar/>
     </div>
   
   );
